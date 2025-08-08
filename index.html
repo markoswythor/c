@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Notas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    
+    <h1>FECHAMENTO CENTRO DE C.</h1>
+    <div class="calculator">
+      <div class="notes">
+        <form>
+          
+          <label for="quantity">Valor do estac.: R$</label>
+        <input type="number" id="quantity" name="quantity" value="15">
+    <hr>
+    <label for="quantity2">Nº de Tickets: </label>
+    <input type="number" id="quantity2" name="quantity2" value="0">
+      <hr>
+          <label for="quantity6">T de PIX: R$</label>
+        <input type="number" id="quantity6" name="quantity6" value="0" oninput="updatePix()"> <span id="total4">0</span>
+        <hr>
+       
+          <label for="quantity5">TROCO: R$</label>
+        <input type="number" id="quantity5" name="quantity5" value="0" oninput="updateTotal()">
+        <hr>
+        <label for="quantity4">T DA MAQUI.: R$</label> 
+        <input type="number" id="quantity4" name="quantity4" value="0" oninput="updateMaq()"> <span id="total3">0</span>
+        <hr>
+        <br>
+        </form>
+        <label for="note-1">Moedas de R$1:</label>
+        <div class="note-input">
+          <button class="decrement" onclick="decrement('note-1')">-</button>
+          <input type="number" id="note-1" value="0" oninput="updateTotal()">
+          <button class="increment" onclick="increment('note-1')">+</button>
+        </div>
+        <label for="note-2">Notas de R$2:</label>
+        <div class="note-input">
+          <button class="decrement" onclick="decrement('note-2')">-</button>
+          <input type="number" id="note-2" value="0" oninput="updateTotal()">
+          <button class="increment" onclick="increment('note-2')">+</button>
+        </div>
+        <label for="note-5">Notas de R$5:</label>
+        <div class="note-input">
+          <button class="decrement" onclick="decrement('note-5')">-</button>
+          <input type="number" id="note-5" value="0" oninput="updateTotal()">
+          <button class="increment" onclick="increment('note-5')">+</button>
+        </div>
+        <label for="note-10">Notas de R$10:</label>
+        <div class="note-input">
+          <button class="decrement" onclick="decrement('note-10')">-</button>
+          <input type="number" id="note-10" value="0" oninput="updateTotal()">
+          <button class="increment" onclick="increment('note-10')">+</button>
+        </div>
+        <label for="note-20">Notas de R$20:</label>
+        <div class="note-input">
+          <button class="decrement" onclick="decrement('note-20')">-</button>
+          <input type="number" id="note-20" value="0" oninput="updateTotal()">
+          <button class="increment" onclick="increment('note-20')">+</button>
+        </div>
+        <label for="note-50">Notas de R$50:</label>
+        <div class="note-input">
+          <button class="decrement" onclick="decrement('note-50')">-</button>
+          <input type="number" id="note-50" value="0" oninput="updateTotal()">
+          <button class="increment" onclick="increment('note-50')">+</button>
+        </div>
+        <label for="note-100">Notas de R$100:</label>
+        <div class="note-input">
+          <button class="decrement" onclick="decrement('note-100')">-</button>
+          <input type="number" id="note-100" value="0" oninput="updateTotal()">
+          <button class="increment" onclick="increment('note-100')">+</button>
+        </div>
+        <hr>
+        <div class="note-input">
+          <label for="obsv">OBS.:</label>
+          <input type="text" id="obsv" name="obsv">
+        </div>
+        
+      </div>
+      <div class="total">
+        <label>Total:</label>
+        <span id="total">R$0,00</span>
+      </div>
+      <div class="total">
+        <label>DINHEIRO (s/ troco): </label>
+        <span id="total22">R$0,00</span>
+      </div>
+      <div class="actions">
+        <button id="reset-btn" onclick="reset()">Zerar notas</button>
+        <button id="meuBotao" >SALVAR NO TELEGRAM</button>
+        <button  onclick="window.location.href='whatsapp://send?text=' + encodeURIComponent(compartilharzap())">Compartilhar via WhatsApp</button>
+        <button id="copy-btn" onclick="copyResult()">FECHAMENTO</button>
+        
+      </div>
+    </div>
+    <script src="script.js"> </script>
+    
+    <footer>
+        <span>Created By <a href="https://www.instagram.com/markosxs/">Markos Wythor</a> | <span class="far fa-copyright"></span> 2023 Todos os direitos reservados.</span>
+    </footer>
+  </body>
+</html>
